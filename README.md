@@ -1,6 +1,8 @@
 # Minibank
 > This is a simple application that deals with receiving payments from an external source and computing the resulting balances that I did to try out using railway oriented programming, functional programming and the dry-rb gems.
 
+![minibank](https://github.com/osmarluz/minibank/assets/29878826/ca87bb22-2e2f-4aad-87b2-89250e5bca96)
+
 ![ruby](https://img.shields.io/badge/Ruby-3.2.2-red.svg)
 ![rails](https://img.shields.io/badge/Rails-7.1.2-red.svg)
 
