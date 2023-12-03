@@ -38,7 +38,7 @@
 
 ### 1. Run the database migrations on the test database
 
-`docker-compose run --rm app bundle exec rails db:migrate`
+`docker-compose run --rm app bundle exec rails db:migrate RAILS_ENV=test`
 
 ### 2. Run the tests
 
