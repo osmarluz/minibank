@@ -1,0 +1,95 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.iugu.com/v1/invoices/1EDC9C2A32244F749ABBE1E9CF70AD3E
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - Basic MjkyOTJEQjY1NTM1M0EyNUYyMTFGRUQyRDRFMDgyN0ZDQzdFNTEzMjgxNTkwMzA1MkJCMTc4MTE1NjQ0NTFCMg==
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 07 Jun 2022 19:07:54 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Handledby:
+      - api/v1/invoice#show
+      X-Cf-Block:
+      - DEFAULT
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - W/"643801b1b90b8faadb94f487f20d3c11"
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      X-Request-Id:
+      - 62ebe3ae1887a4bfbe0982bd93e6c087
+      X-Runtime:
+      - '0.160029'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Set-Cookie:
+      - __cfruid=5e8dd811f62455d204f64a70f0e0a7d727f5e7b7-1654628874; path=/; domain=.iugu.com;
+        HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 717bac5cec8f6aa4-SJP
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"1EDC9C2A32244F749ABBE1E9CF70AD3E","due_date":"2024-11-15","currency":"BRL","discount_cents":null,"email":"usuario.bc5e03bf1647a3f2cff96b74f4d9659f@capim.com.br","items_total_cents":12332,"notification_url":null,"return_url":null,"status":"paid","tax_cents":null,"total_cents":12332,"total_paid_cents":12332,"taxes_paid_cents":155,"paid_at":"2022-06-07T13:23:35-03:00","paid_cents":12332,"cc_emails":null,"financial_return_date":null,"payable_with":["bank_slip","pix"],"overpaid_cents":null,"ignore_due_email":null,"ignore_canceled_email":null,"advance_fee_cents":null,"commission_cents":0,"early_payment_discount":false,"order_id":null,"updated_at":"2022-06-07T13:23:35-03:00","credit_card_brand":null,"credit_card_bin":null,"credit_card_last_4":null,"credit_card_captured_at":null,"credit_card_tid":null,"external_reference":null,"max_installments_value":null,"payer_name":"lionel
+        messi","payer_email":"usuario.bc5e03bf1647a3f2cff96b74f4d9659f@capim.com.br","payer_cpf_cnpj":"46630715039","payer_phone":"999751366","payer_phone_prefix":"16","payer_address_zip_code":"15092-230","payer_address_street":"Estrada
+        Antonio Jos\u00e9 Martins Filho","payer_address_district":"Est\u00e2ncia Matinha","payer_address_city":"S\u00e3o
+        Jos\u00e9 do Rio Preto","payer_address_state":"SP","payer_address_number":"564","payer_address_complement":"","payer_address_country":null,"late_payment_fine":2,"late_payment_fine_cents":null,"split_id":null,"account_id":"B7749A93DF4E009A743696818111D372","account_name":"CAPIM
+        TECNOLOGIA","secure_id":"1edc9c2a-3224-4f74-9abb-e1e9cf70ad3e-efdb","secure_url":"https://faturas.iugu.com/1edc9c2a-3224-4f74-9abb-e1e9cf70ad3e-efdb","customer_id":"324A1CA97321401BB612AA680CFBA337","customer_ref":"lionel
+        messi","customer_name":"lionel messi","user_id":null,"total":"R$ 123,32","taxes_paid":"R$
+        1,55","total_paid":"R$ 123,32","total_overpaid":"R$ 0,00","total_refunded":"R$
+        0,00","commission":"R$ 0,00","fines_on_occurrence_day":"R$ 0,00","total_on_occurrence_day":"R$
+        123,32","fines_on_occurrence_day_cents":0,"total_on_occurrence_day_cents":12332,"refunded_cents":0,"remaining_captured_cents":12332,"advance_fee":null,"paid":"R$
+        123,32","original_payment_id":null,"double_payment_id":null,"per_day_interest":true,"per_day_interest_value":1,"interest":null,"discount":null,"duplicated_invoice_id":null,"created_at":"07/06,
+        10:52","created_at_iso":"2022-06-07T10:52:55-03:00","authorized_at":null,"authorized_at_iso":null,"expired_at":null,"expired_at_iso":null,"refunded_at":null,"refunded_at_iso":null,"canceled_at":null,"canceled_at_iso":null,"protested_at":null,"protested_at_iso":null,"chargeback_at":null,"chargeback_at_iso":null,"occurrence_date":"2022-06-07","refundable":false,"installments":null,"transaction_number":1111,"payment_method":"iugu_bank_slip_test","financial_return_dates":null,"bank_slip":null,"pix":{"qrcode":"http://faturas.iugu.com/iugu_pix/1edc9c2a-3224-4f74-9abb-e1e9cf70ad3e-efdb/test/qr_code","qrcode_text":"http://faturas.iugu.com/iugu_pix/1edc9c2a-3224-4f74-9abb-e1e9cf70ad3e-efdb/test/pay","status":"qr_code_created","payer_cpf_cnpj":null,"payer_name":null,"end_to_end_id":null},"items":[{"id":"8D6FD17DC1D146C8A67138D26D78CCEC","description":"Parcelamento
+        Capim","price_cents":12332,"quantity":1,"created_at":"2022-06-07T10:52:55-03:00","updated_at":"2022-06-07T10:52:55-03:00","price":"R$
+        123,32"}],"early_payment_discounts":[],"split_rules":null,"variables":[{"variable":"payer.address.city","value":"S\u00e3o
+        Jos\u00e9 do Rio Preto"},{"variable":"payer.address.city","value":"S\u00e3o
+        Jos\u00e9 do Rio Preto"},{"variable":"payer.address.district","value":"Est\u00e2ncia
+        Matinha"},{"variable":"payer.address.district","value":"Est\u00e2ncia Matinha"},{"variable":"payer.address.number","value":"564"},{"variable":"payer.address.number","value":"564"},{"variable":"payer.address.state","value":"SP"},{"variable":"payer.address.state","value":"SP"},{"variable":"payer.address.street","value":"Estrada
+        Antonio Jos\u00e9 Martins Filho"},{"variable":"payer.address.street","value":"Estrada
+        Antonio Jos\u00e9 Martins Filho"},{"variable":"payer.address.zip_code","value":"15092-230"},{"variable":"payer.address.zip_code","value":"15092-230"},{"variable":"payer.cpf_cnpj","value":"46630715039"},{"variable":"payer.cpf_cnpj","value":"46630715039"},{"variable":"payer.email","value":"usuario.bc5e03bf1647a3f2cff96b74f4d9659f@capim.com.br"},{"variable":"payer.email","value":"usuario.bc5e03bf1647a3f2cff96b74f4d9659f@capim.com.br"},{"variable":"payer.name","value":"lionel
+        messi"},{"variable":"payer.name","value":"lionel messi"},{"variable":"payer.phone","value":"999751366"},{"variable":"payer.phone","value":"999751366"},{"variable":"payer.phone_prefix","value":"16"},{"variable":"payer.phone_prefix","value":"16"},{"variable":"payment_data.transaction_number","value":"1111"},{"variable":"payment_data.transaction_number","value":"1111"},{"variable":"payment_method","value":"iugu_bank_slip_test"},{"variable":"payment_method","value":"iugu_bank_slip_test"},{"variable":"total_views","value":"2"},{"variable":"total_views","value":"2"}],"custom_variables":[{"name":"clinic_name","value":"Clivale
+        clinica"},{"name":"installment_id","value":"1062"},{"name":"clinic_id","value":"1"}],"logs":[{"id":"DFB52A0137FE465B85510202D9DAE7A9","description":"Fatura
+        visualizada!","notes":"Fatura visualizada!!","created_at":"07/06, 13:23"},{"id":"A8458B9967D041DC8F0067B53F072650","description":"Email
+        de Recibo enviado!","notes":"Recibo enviado com sucesso para: usuario.bc5e03bf1647a3f2cff96b74f4d9659f@capim.com.br","created_at":"07/06,
+        13:23"},{"id":"C87545E1179D4A2C8B65F6CF90E5BDF5","description":"Fatura visualizada!","notes":"Fatura
+        visualizada!!","created_at":"07/06, 13:23"},{"id":"16784C218B134C2C9B029B37353E268D","description":"Email
+        de Lembrete enviado!","notes":"Lembrete enviado com sucesso para: usuario.bc5e03bf1647a3f2cff96b74f4d9659f@capim.com.br","created_at":"07/06,
+        10:52"},{"id":"6FDC090759724B2EA78B1E5CE3B7BBAD","description":"Fatura criada
+        com sucesso!","notes":"Fatura criada!","created_at":"07/06, 10:52"}],"credit_card_transaction":null}'
+  recorded_at: Tue, 07 Jun 2022 19:07:54 GMT
+recorded_with: VCR 6.1.0

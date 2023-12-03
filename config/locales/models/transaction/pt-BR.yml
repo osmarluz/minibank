@@ -1,0 +1,6 @@
+pt-BR:
+  activerecord:
+    attributes:
+      transaction/kind:
+        incoming: Entrada
+        outgoing: Saída

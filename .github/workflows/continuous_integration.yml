@@ -1,0 +1,63 @@
+name: 'Continuous Integration'
+
+on: push
+
+jobs:
+  rubocop:
+    name: Rubocop
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@v1.161.0
+        with:
+          bundler-cache: true
+      - name: Lint Ruby files
+        run: bundle exec rubocop --parallel
+
+  rspec:
+    name: RSpec
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:12
+        ports:
+          - '5432:5432'
+        env:
+          POSTGRES_DB: rails_test
+          POSTGRES_USER: rails
+          POSTGRES_PASSWORD: password
+    env:
+      RAILS_ENV: test
+      DATABASE_URL: 'postgres://rails:password@localhost:5432/rails_test'
+      RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@v1.161.0
+        with:
+          bundler-cache: true
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16'
+      - name: Cache Node modules
+        uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Precompile assets
+        run: bundle exec rails assets:precompile
+      - name: Set up database schema
+        run: bundle exec rails db:schema:load
+      - name: Run tests
+        run: bundle exec rspec
+      - name: Upload coverage information
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true

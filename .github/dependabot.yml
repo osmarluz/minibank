@@ -1,0 +1,25 @@
+version: 2
+updates:
+  - package-ecosystem: 'bundler'
+    directory: '/'
+    schedule:
+      day: 'monday'
+      time: '12:00'
+      interval: 'weekly'
+      timezone: 'America/Sao_Paulo'
+
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      day: 'monday'
+      time: '12:00'
+      interval: 'weekly'
+      timezone: 'America/Sao_Paulo'
+
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      day: 'monday'
+      time: '12:00'
+      interval: 'weekly'
+      timezone: 'America/Sao_Paulo'

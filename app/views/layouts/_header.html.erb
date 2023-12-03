@@ -1,0 +1,15 @@
+<header class='navbar navbar-dark sticky-top d-flex flex-column flex-md-row align-items-start align-items-md-center bg-primary p-0 shadow'>
+  <div class='navbar-brand col-md-3 col-lg-1 me-0 px-3 text-center text-tertiary'>
+    Minibank
+  </div>
+  <%= button_tag type: 'button', class: 'navbar-toggler position-absolute d-md-none collapsed', data: { bs_toggle: 'collapse', bs_target: '#sidebar-menu' } do %>
+    <span class='navbar-toggler-icon'></span>
+  <% end %>
+  <div class='navbar-nav'>
+    <div class='nav-item text-nowrap'>
+      <%= link_to '#', class: 'nav-link px-3' do %>
+        Sair
+      <% end %>
+    </div>
+  </div>
+</header>

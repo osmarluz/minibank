@@ -1,0 +1,72 @@
+version: '3.9'
+
+services:
+  app:
+    tmpfs:
+    - /tmp
+    tty: true
+    stdin_open: true
+    build: .
+    restart: always
+    volumes:
+      - ".:/app:cached"
+      - rails_cache:/app/tmp/cache
+      - bundle:/usr/local/bundle
+    entrypoint: ["sh", "entrypoint.sh"]
+    command: >
+      bash -c "bundle exec rails s -p ${RAILS_PORT} -b ${RAILS_BIND}"
+    ports:
+      - "${RAILS_PORT}:${RAILS_PORT}"
+    depends_on:
+      - postgres
+      - redis
+    env_file:
+      - '.env'
+
+  postgres:
+    image: 'postgres:${PG_MAJOR}'
+    restart: always
+    volumes:
+      - .psqlrc:/root/.psqlrc:ro
+      - postgres:/var/lib/postgresql/data
+      - ./log:/root/log:cached
+    environment:
+      PSQL_HISTFILE: /root/log/.psql_history
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    env_file:
+      - .env
+
+  redis:
+    image: 'redis:6-alpine'
+    command: redis-server
+    ports:
+      - "${REDIS_PORT}:6379"
+    volumes:
+      - 'redis:/data'
+
+  sidekiq:
+    build: .
+    restart: always
+    command: bundle exec sidekiq -C ./config/sidekiq.yml
+    volumes:
+      - ".:/app:cached"
+      - rails_cache:/app/tmp/cache
+      - bundle:/usr/local/bundle
+    depends_on:
+      - postgres
+      - redis
+    env_file:
+      - '.env'
+
+volumes:
+  postgres:
+  bundle:
+  rails_cache:
+  redis:
+
+networks:
+  default:
+    name: app_default

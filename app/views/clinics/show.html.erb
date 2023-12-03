@@ -1,0 +1,32 @@
+<div class='pt-3 pb-2 mb-3 border-bottom'>
+  <h2><%= @clinic.name %></h2>
+</div>
+
+<div class='d-flex justify-content-center my-5'>
+  <div class="card w-25">
+    <h4 class="card-header bg-tertiary text-center">Saldo</h5>
+    <div class="card-body">
+      <h2 class="text-center">
+        <span class="badge bg-primary">
+          <%= number_to_currency(@clinic.balance) %>
+        </span>
+      </h3>
+    </div>
+  </div>
+</div>
+
+<div class='table-responsive'>
+  <table class='table table-sm'>
+    <thead>
+      <tr>
+        <th scope='col'>Tipo</th>
+        <th scope='col'>Valor</th>
+        <th scope='col'>Descrição</th>
+        <th scope='col'>Data de criação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: 'transaction', collection: @transactions %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,17 @@
+<div class='pt-3 pb-2 mb-3 border-bottom'>
+  <h2>Accounts</h2>
+</div>
+
+<div class='table-responsive'>
+  <table class='table table-sm'>
+    <thead>
+      <tr>
+        <th scope='col'>Name</th>
+        <th scope='col'>Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: 'clinic', collection: @clinics %>
+    </tbody>
+  </table>
+</div>

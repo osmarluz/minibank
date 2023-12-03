@@ -1,0 +1,6 @@
+<tr>
+  <td><%= Transaction.human_attribute_name("kind.#{transaction.kind}") %></td>
+  <td><%= number_to_currency(transaction.amount) %></td>
+  <td><%= transaction.description %></td>
+  <td><%= l(transaction.created_at, format: :short) %></td>
+</tr>
