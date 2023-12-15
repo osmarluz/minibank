@@ -1,0 +1,6 @@
+en-US:
+  activerecord:
+    attributes:
+      transaction/kind:
+        incoming: Incoming
+        outgoing: Outgoing

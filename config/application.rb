@@ -31,7 +31,7 @@ module App
       Rails.root.join('config', 'locales', '**', '*.{rb,yml}')
     ]
 
-    config.i18n.default_locale = 'pt-BR'
+    config.i18n.default_locale = 'en-US'
     config.time_zone = 'America/Sao_Paulo'
     config.autoload_paths << "#{Rails.root}/lib/constraints"
 
